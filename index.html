@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Yield Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Rental Yield Calculator</h1>
+  </header>
+
+  <main>
+    <section class="calculator">
+      <form id="rental-yield-form">
+        <div class="input-group">
+          <label for="property-price">Property Price:</label>
+          <input type="number" id="property-price" name="propertyPrice" required>
+        </div>
+
+        <div class="input-group">
+          <label for="rental-income">Monthly Rental Income:</label>
+          <input type="number" id="rental-income" name="rentalIncome" required>
+        </div>
+
+        <div class="input-group">
+          <label for="include-mortgage">Include Mortgage:</label>
+          <input type="checkbox" id="include-mortgage" name="includeMortgage">
+        </div>
+
+        <div id="mortgage-details" class="hidden">
+          <div class="input-group">
+            <label for="down-payment">Down Payment:</label>
+            <input type="number" id="down-payment" name="downPayment" value="0" min="0">
+          </div>
+
+          <div class="input-group">
+            <label for="closing-costs">Mortgage Closing Costs:</label>
+            <input type="number" id="closing-costs" name="closingCosts" value="0" min="0">
+          </div>
+
+          <div class="input-group">
+            <label for="mortgage-rate">Mortgage Interest Rate (%):</label>
+            <input type="number" id="mortgage-rate" name="mortgageRate" step="0.01" min="0" value="0">
+          </div>
+
+          <div class="input-group">
+            <label for="mortgage-term">Mortgage Term (years):</label>
+            <input type="number" id="mortgage-term" name="mortgageTerm" min="1" value="25">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="include-roi">Include ROI:</label>
+          <input type="checkbox" id="include-roi" name="includeRoi">
+        </div>
+        
+        <div id="roi-details" class="hidden">
+          <div class="input-group">
+            <label for="holding-period">Holding Period (Years):</label>
+            <input type="number" id="holding-period" name="holdingPeriod" min="1" value="25">
+          </div>
+        
+          <div class="input-group">
+            <label for="annual-appreciation">Annual Appreciation Rate (%):</label>
+            <input type="number" id="annual-appreciation" name="annualAppreciation" step="0.01" min="0" value="0">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="property-tax">Annual Property Tax:</label>
+          <input type="number" id="property-tax" name="propertyTax" min="0" value="0">
+        </div>
+
+        <div class="input-group">
+          <label for="maintenance-costs">Annual Maintenance Costs:</label>
+          <input type="number" id="maintenance-costs" name="maintenanceCosts" min="0" value="0">
+        </div>
+
+        <div class="input-group">
+          <label for="insurance-costs">Annual Insurance Costs:</label>
+          <input type="number" id="insurance-costs" name="insuranceCosts" min="0" value="0">
+        </div>
+
+        <div class="input-group">
+          <label for="management-fees">Annual Management Fees:</label>
+          <input type="number" id="management-fees" name="managementFees" min="0" value="0">
+        </div>
+
+        <button type="submit">Calculate Rental Yield</button>
+      </form>
+    </section>
+
+    <section class="results">
+        <h2>Rental Yield Results</h2>
+        <p id="gross-yield-result">Please enter property and rental information to calculate the gross rental yield.</p>
+        <p id="net-yield-result">Please enter property and rental information to calculate the net rental yield.</p>
+        <p id="cash-on-cash-result">Please enter property and rental information to calculate the cash-on-cash return.</p>
+        <p id="cash-flow-result">Please enter property and rental information to calculate the monthly cash flow.</p>
+        <p id="roi-result">Please enter property and ROI information to calculate the return on investment (ROI).</p>
+</section>
+      
+     
